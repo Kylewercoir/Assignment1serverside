@@ -1,0 +1,48 @@
+﻿@page
+@model WebApplication3.Views.ExercisesModel
+@{
+}
+
+@model WebApplication3.Models.Exercise
+
+@{
+    ViewData["Title"] = "Create Exercise";
+}
+
+<h2>Create Exercise</h2>
+
+<form asp-action="Create" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label asp-for="ExerciseName" class="control-label"></label>
+        <input asp-for="ExerciseName" class="form-control" />
+        <span asp-validation-for="ExerciseName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Sets" class="control-label"></label>
+        <input asp-for="Sets" class="form-control" />
+        <span asp-validation-for="Sets" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Reps" class="control-label"></label>
+        <input asp-for="Reps" class="form-control" />
+        <span asp-validation-for="Reps" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Weight" class="control-label"></label>
+        <input asp-for="Weight" class="form-control" />
+        <span asp-validation-for="Weight" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WorkoutId" class="control-label"></label>
+        <select asp-for="WorkoutId" class="form-control" asp-items="ViewBag.WorkoutId"></select>
+        <span asp-validation-for="WorkoutId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
